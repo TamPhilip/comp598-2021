@@ -1,0 +1,1 @@
+Did notice an inconsistency with @realDonaldTrump not being counted, but based off of this requirements: "This means that it is separated from other alphanumeric letters by either whitespace OR non-alphanumeric characters (e.g., “antiTrump protesters” contains “trump”, but “I got trumped” does not)." it should not be counted. This issue is only caused by retweets.
