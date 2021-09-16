@@ -1,3 +1,4 @@
+# Philip Tam 260849613
 from pathlib import Path
 import os, sys
 parentdir = Path(__file__).parents[0]
@@ -23,7 +24,7 @@ class Dataset():
         # Remove rows with ?
         df = df[df['content'].str.contains('\?') == False]
         # Add Trump Feature
-        df['trump_mention'] = df['content'].str.contains('[^a-zA-Z:]Trump[^a-zA-Z:]|^Trump[^a-zA-Z:]')
+        df['trump_mention'] = df['content'].str.contains('[^a-zA-Z0-9]Trump[^a-zA-Z0-9]|^Trump[^a-zA-Z0-9]')
         return df
 
     def export(self, df):
