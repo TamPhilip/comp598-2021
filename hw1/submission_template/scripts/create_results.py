@@ -20,7 +20,7 @@ class Result():
     def create(self):
         df = pd.read_csv(self.path, sep='\t')
         
-        data = {"result" : ["frac-trump-mentions"], "value" : [len(df[df['trump_mention'] == True]) / len(df)]}
+        data = {"result" : ["frac-trump-mentions"], "value" : ['%.3f' % (len(df[df['trump_mention'] == True]) / len(df))]}
         new_df = DataFrame(data=data)
 
         return new_df

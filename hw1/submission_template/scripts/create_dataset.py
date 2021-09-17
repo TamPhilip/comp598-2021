@@ -24,7 +24,7 @@ class Dataset():
         # Remove rows with ?
         df = df[df['content'].str.contains('\?') == False]
         # Add Trump Feature
-        df['trump_mention'] = df['content'].str.contains('[^a-zA-Z0-9]Trump[^a-zA-Z0-9]|^Trump[^a-zA-Z0-9]')
+        df['trump_mention'] = df['content'].str.contains('[^a-zA-Z0-9]Trump[^a-zA-Z0-9]|^Trump[^a-zA-Z0-9]|[^a-zA-Z0-9]Trump$')
         return df
 
     def export(self, df):
