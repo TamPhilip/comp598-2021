@@ -29,6 +29,7 @@ class Dataset():
 
     def export(self, df):
         df[['tweet_id', 'publish_date', 'content','trump_mention']].to_csv('dataset.tsv', sep = '\t', index=False)
+        print(len(df))
         
 
 if __name__ == '__main__':
