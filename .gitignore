@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+comp598_2021.pem
+
 # C extensions
 *.so
 
