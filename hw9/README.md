@@ -1,4 +1,4 @@
-# Welcome to HW7! 
+# Welcome to HW9! 
 
 **Important instructions** 
 Please read these instructions before submitting your assignment. 
@@ -14,41 +14,29 @@ HW7 has several files that must be submitted. They all should be inside `submiss
 ```
 submission_template
 ├── src
-    ├── collect_newest.py
-    ├── extract_to_tsv.py
-    ├── analyze.py
-├── concordia.json
-├── mcgill.json
-├── annotated_concordia.tsv
-├── annotated_mcgill.tsv
+    ├── build_interaction_network.py
+    ├── compute_network_stats.py
+├── interaction_network.json
+├── stats.json
 ├── other folders are optional in this assignment
 ```
 
 `src` can also carry any other additional code files that you need to write.
 
+
 ## Your code
 
-`collect_newest.py` must be successfully invoked with the following command:
+`build_interaction_network.py` must be successfully invoked with the following command:
 
-`python collect_newest.py -o <output_file> -s <subreddit>`
+`python build_interaction_network.py -i /path/to/<script_input.csv> -o /path/to/<interaction_network.json>`
 
-Every time you run it, it produces a JSON file. Using the instructions in the PDF, run it twice and produce `concordia.json` and `mcgill.json`. These JSON output files must be placed in the root of `submission_template` folder.
+Every time you run it, it produces a JSON file. Using the instructions in the PDF, run the script to procude a JSON file named `interaction_network.json`. This JSON output file must be placed in the root of `submission_template` folder.
 
-`extract_to_tsv.py` must be successfully invoked with the following command:
+`compute_network_stats.py` must be successfully invoked with the following command:
 
-`python extract_to_tsv.py -o <out_file> <json_file> <num_posts_to_output>`
+`python compute_network_stats.py -i /path/to/<interaction_network.json> -o /path/to/<stats.json>`
 
-Using the instructions in the PDF, run it twice to produce two `.tsv` files:
-
-`python extract_to_tsv.py -o annotated_mcgill.tsv mcgill.json 50` produces `annotated_mcgill.tsv`, which should be placed in the root of `submission_template` folder.
-`python extract_to_tsv.py -o annotated_concordia.tsv mcgill.json 50` produces `annotated_concordia.tsv`, which should be placed in the root of `submission_template` folder.
-
-`analyze.py` must be successfully invoked with the following command:
-
-`python analyze.py -i <coded_file.tsv> [-o <output_file>]`
-
-The `-o` argument is optional. If omitted, print the result to stdout. **Ensure your script also dumps the output file when invoked with the `-o` argument**. 
-
+Every time you run it, it produces a JSON file. Using the instructions in the PDF, run the script to procude a JSON file named `stats.json`. This JSON output file must be placed in the root of `submission_template` folder.
 
 If needed, you can have auxiliary code/scripts. Make sure everything goes under the `src` folder.
 
@@ -113,7 +101,7 @@ Once you are happy with your results, head to the `submission_template` folder a
 
 **Replace `STUDENTID` with your McGill ID (a number).** For example, if your student ID is `123456`, run `python submission_wrapper.py -id 123456`.
 
-**Make sure you call this script from the `submission_template` folder for hw7 and not from other folders.**
+**Make sure you call this script from the `submission_template` folder for hw9 and not from other folders.**
 
 The script will zip everything needed for this assignment into a **`STUDENTID_submission_template.zip` file. You must submit the produced .zip on MyCourses**.
 
